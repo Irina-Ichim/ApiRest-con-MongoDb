@@ -7,7 +7,23 @@ app.get('/', (req, res) =>{
 })
 
 app.post('/' , (req,res) => {
+    console.log(req.params)
     res.status(201).send('creando chanchito')
+})
+
+app.get('/:id', (req, res) => {
+    console.log(req.params)
+    res.status(200).send(req.params)
+})
+
+
+app.put('/:id', (req, res) => {
+    console.log(req.params)
+    res.sendStatus(204)
+})
+
+app.delete('/:id', (req, res) =>{
+    res.sendStaus(204)
 })
 
 app.listen(port, () => {
