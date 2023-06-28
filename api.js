@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const user = require('./user.controller')
 const app = express()
 const port = 3000
@@ -8,6 +9,7 @@ const port = 3000
     //console.log(req.params)
    // res.status(201).send('creando chanchito')
 //})
+mongoose.connect('mongodb+srv://onlyirina7:IrinaDan2023@cluster0.pri7c4d.mongodb.net/?retryWrites=true&w=majority')
 
 app.get('/', user.list)
 app.post('/', user.create)
