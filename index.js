@@ -41,4 +41,14 @@ const buscarUno = async () => {
     console.log(user)
 }
 
-buscarUno()
+//buscarUno()
+
+//Para actualizar usamos el .findOne y agregamos una constante que indique los datos actualizados, seguidamente usamos await user.save() para que nuestros cambios se guarden en la base de datos
+const actualizar = async () => {
+    const user = await User.findOne({ username: 'Chanchito feliz'})
+    console.log(user)
+    user.edad = 30
+    await user.save()
+}
+
+actualizar()
