@@ -50,5 +50,15 @@ const actualizar = async () => {
     user.edad = 30
     await user.save()
 }
+//actualizar()
 
-actualizar()
+
+//Para eliminar usamos.deleteOne
+const eliminar = async () => {
+    const user = await User.findOne({username:'Chanchito triste'})
+    console.log(user)
+    if(user) {
+    await user.deleteOne()
+    }
+}
+eliminar()
