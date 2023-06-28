@@ -32,4 +32,13 @@ const buscar = async () => {
     const user = await User.find({username: 'Chanchito feliz'})
     console.log(user)
 }   
- buscar()
+// buscar()
+
+
+//Para buscar un unico elemeto dentro de mi base de datos usamos el metodo .findOne agregando ({la condicion: ''})
+const buscarUno = async () => {
+    const user = await User.findOne({username: 'Chanchito feliz'})
+    console.log(user)
+}
+
+buscarUno()
