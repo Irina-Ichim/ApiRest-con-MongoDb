@@ -13,7 +13,16 @@ const User = mongoose.model('User', {
 //Tambien para guardar en la base de datos podemos colocar la palabra reservada de await, antes de user.save
 //Si queremos imprimir en la terminal el resultado, le asignamos una constante
 const crear = async () => {
-    const user = new User({username:'Chanchito feliz', edad: 15})
+    const user = new User({username:'Chanchito triste', edad: 25})
     const savedUser = await user.save()
     console.log(savedUser)
 }
+//crear()
+
+//.Find busca todos los usuarios de la base de datos
+const buscarTodo = async() => {
+    const users = await User.find()
+    console.log(users)
+}
+
+buscarTodo()
