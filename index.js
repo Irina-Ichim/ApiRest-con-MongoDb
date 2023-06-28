@@ -25,4 +25,11 @@ const buscarTodo = async() => {
     console.log(users)
 }
 
-buscarTodo()
+//buscarTodo()
+
+//Para buscar un unico usuario dentro de mi base de datos uso .find({el dato por lo que deseo buscar, en mi caso username})
+const buscar = async () => {
+    const user = await User.find({username: 'Chanchito feliz'})
+    console.log(user)
+}   
+ buscar()
