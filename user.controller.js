@@ -25,7 +25,12 @@ const User = {
         res.sendStatus(204)
     },
     destroy: async(req, res) => {
-        res.status(204).send('eliminando un chanchito :(')
+        const { id } = req.params
+        const user = await Users.findOne({_id:id})
+        if(user) {
+            user.deleteOne()
+        }
+        res.sendStatus(204)
     }
 
 }
