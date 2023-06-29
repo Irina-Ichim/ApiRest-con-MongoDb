@@ -6,10 +6,14 @@ const User = {
     },
     list: async(req, res) => {
         const users = await Users.find()
-        res.status(200).send('users')
+        const user = new Users()
+        res.status(200).send(users)
     },
     create: async(req,res) => {
-        res.status(201).send('Creando un chanchito')
+        console.log(req.body)
+        const user = new Users(req.body)
+         const savedUser =await user.save()
+        res.status(201).send('savedUser_.id')
     },
     update: async(req, res) => {
         res.status(204).send('actualizando chanchito')

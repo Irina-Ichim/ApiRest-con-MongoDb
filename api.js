@@ -9,6 +9,7 @@ const port = 3000
     //console.log(req.params)
    // res.status(201).send('creando chanchito')
 //})
+app.use(express.json())
 mongoose.connect('mongodb+srv://onlyirina7:IrinaDan2023@cluster0.pri7c4d.mongodb.net/?retryWrites=true&w=majority')
 
 app.get('/', user.list)
@@ -25,3 +26,7 @@ app.get('*', (req, res) =>{
 app.listen(port, () => {
     console.log('Arrancando la aplicación')
 })
+
+
+//Milddlewere es una funcion que se va a ejecutar cuando nosotros realicemos cualquier tipo de petición
+//estos milddlwere se utiliza para realizar validaciones
