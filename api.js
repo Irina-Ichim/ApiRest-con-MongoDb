@@ -12,12 +12,16 @@ const port = 3000
 app.use(express.json())
 mongoose.connect('mongodb+srv://onlyirina7:IrinaDan2023@cluster0.pri7c4d.mongodb.net/?retryWrites=true&w=majority')
 
-app.get('/', user.list)
-app.post('/', user.create)
-app.get('/:id', user.get)
-app.put('/:id', user.update)
-app.delete('/:id', user.destroy)
+app.get('/users', user.list)
+app.post('/users', user.create)
+app.get('/users/:id', user.get)
+app.put('/users/:id', user.update)
+app.delete('/users/:id', user.destroy)
 
+app.get('/', (req, res) =>{     //He agregado una ruta de raiz donde voy a agregar mi archivo html
+    console.log(__dirname)      //__dirname va indicar a sendFile donde nosotros nos encontramos
+    res.sendFile(`${__dirname}/index.html`)  //Con sendFile enviamos un archivo html a nuestra carpeta raiz
+})
 app.get('*', (req, res) =>{
     res.status(404).send('Esta pagina no existe')
 })
