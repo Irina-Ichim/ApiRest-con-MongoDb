@@ -29,4 +29,4 @@ app.listen(port, () => {
 
 
 //Milddlewere es una funcion que se va a ejecutar cuando nosotros realicemos cualquier tipo de petición
-//estos milddlwere se utiliza para realizar validaciones
+//estos milddlwere se utiliza. para realizar validaciones
