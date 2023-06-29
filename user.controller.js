@@ -18,7 +18,11 @@ const User = {
         res.status(201).send('savedUser_.id')
     },
     update: async(req, res) => {
-        res.status(204).send('actualizando chanchito')
+        const { id } = req.params
+        const user = await Users.findOne({_id:id})
+        Object.assign(user, req.body)   //Con Object.assign reemplazamos los datos de nuestro usuario pero que vengan dentro del body
+        await user.save()
+        res.sendStatus(204)
     },
     destroy: async(req, res) => {
         res.status(204).send('eliminando un chanchito :(')
