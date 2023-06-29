@@ -18,6 +18,7 @@ app.get('/users/:id', user.get)
 app.put('/users/:id', user.update)
 app.delete('/users/:id', user.destroy)
 
+app.use(express.static('app'))  //He agregado un midllewere de express y con static está buscando todo los archivos de nuestra carpeta
 app.get('/', (req, res) =>{     //He agregado una ruta de raiz donde voy a agregar mi archivo html
     console.log(__dirname)      //__dirname va indicar a sendFile donde nosotros nos encontramos
     res.sendFile(`${__dirname}/index.html`)  //Con sendFile enviamos un archivo html a nuestra carpeta raiz
