@@ -16,13 +16,24 @@ const loadInitialTemplate =() => {
     const body = document.getElementsByTagName('body')[0] //Con getElementByTagname buscamos por etiquetas
     body.innerHTML = template
 }
-
+const getUsers = async () => {
+    
+}
 const addFormListener = () => {
     const userForm = document.getElementById('user-form')
     userForm.onSubmit = async (e) => {
         e.preventDefault()
         const FormData = new FormData(userForm.getAnimations('name'))
         const data = Object.fromEntries(form.Data.entries())  //un objeto que cuente con la condicion de ser un literal
+        await fetch('/users', {
+            method: 'POST',
+           body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        userForm.reset()
+        getUsers()
     }
 }
 
