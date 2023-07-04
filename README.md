@@ -6,3 +6,4 @@ He creado una cuenta para MongoDB, utilizó Atlas y AWS para versión gratuita e
 Para visualizar en la terminal los datos de la base de datos uso: node + nombre archivo que deseo ejecutar
 Methodos: .find + .find({condicion: ''}) + .findOne({condicion: ''})+ .deleteOne
 Nuevo concepto : Milddlewere es una funcion que se va a ejecutar cuando nosotros realicemos cualquier tipo de petición
+Este repositorio es un simple formulario que nos permite agregar y/o eliminar usuarios desde la base de datos de MongoDB utilizando la version Atlas.
