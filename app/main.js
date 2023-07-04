@@ -17,7 +17,15 @@ const loadInitialTemplate =() => {
     body.innerHTML = template
 }
 const getUsers = async () => {
-    
+    const response = await fetch('/users')
+    const users = await response.json()
+    const template = user => `
+    <li>
+    ${user.name} ${user.lastname} <button data-id="${user._id}">Eliminar</button>
+    `
+
+    const userList = document.getElementById('user-list')
+    userList.innerHTML = users.map(user => template(user)).join('')
 }
 const addFormListener = () => {
     const userForm = document.getElementById('user-form')
@@ -40,5 +48,6 @@ const addFormListener = () => {
 window.onload = () => {
     loadInitialTemplate()
     addFormListener
+    getUsers()
 }
 
