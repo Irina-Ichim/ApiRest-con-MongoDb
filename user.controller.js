@@ -15,7 +15,8 @@ const User = {
     
         const user = new Users(req.body)
          const savedUser =await user.save()
-        res.status(201).send('savedUser_.id')
+         res.status(201).json(savedUser);
+
     },
     update: async(req, res) => {
         const { id } = req.params
