@@ -1,4 +1,4 @@
-/* styles.css */
+
 body {
     background-color: #333; 
     display: flex;
@@ -7,6 +7,9 @@ body {
     height: 100vh;
     margin: 0;
     flex-direction: column; 
+  }
+  h1{
+    color: #fff;
   }
   
   form {
@@ -58,8 +61,8 @@ body {
   }
   
   #user-list button {
-    background-color: #007bff;
-    color: #8f1717;
+    background-color: #ff00b3;
+    color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
@@ -67,6 +70,6 @@ body {
   }
   
   #user-list button:hover {
-    background-color: #0056b3;
+    background-color: #ff00b3;
   }
   
